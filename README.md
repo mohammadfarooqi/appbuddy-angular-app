@@ -1,4 +1,4 @@
-# AppbuddyAngularApp
+# Appbuddy Angular App
 
 To run this application:
 - `npm install`

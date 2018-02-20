@@ -1,18 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ListComponent } from './client/list/list.component';
-import { EditComponent } from './client/edit/edit.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
-    EditComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,

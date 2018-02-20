@@ -23,6 +23,8 @@ export class DataService {
   private blogsSubject: Subject<Array<Blog>>;
   private blogsErrorSubject: Subject<Response>;
 
+  private FILE_PATH = '../../assets/data/list_data.json';
+
   constructor(private http: Http) {
     this.blogsSubject = new Subject();
     this.blogs$ = this.blogsSubject.asObservable();
@@ -30,10 +32,8 @@ export class DataService {
     this.blogsError$ = this.blogsErrorSubject.asObservable();
   }
 
-  getData(): void {
-    const FILE_PATH = '../../assets/data/list_data.json';
-
-    this.http.get(FILE_PATH)
+  getBlogs(): void {
+    this.http.get(this.FILE_PATH)
               .map(res => res.json())
               .subscribe(
                 blogs => this.blogsSubject.next(blogs),
